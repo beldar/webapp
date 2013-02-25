@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml version="1.0">
+
+<!-- Free software (c) 2001 ALICE AI Foundation -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License -->
+<!-- as published by the Free Software Foundation. -->
+
+	<meta name="author" content="Marti Planellas"/>
+	<meta name="language" content="es"/>
+
+	<category>
+		<pattern>*</pattern>
+		<template>
+                     Puedo hablar contigo de concesionarios, contacto o coches.
+		</template>
+	</category>
+	<category>
+		<pattern>TOPIC</pattern>
+		<template> 
+		  Topic actual es <get name="topic" />.
+		</template>
+	</category>
+        <category>
+        <category>
+		<pattern>NOMBRE *</pattern>
+		<template>      
+                  De acuerdo a partir de ahora te voy a llamar <set name="name"><star /></set>
+                  <set name="topic"></set>
+		</template>
+	</category> 
+        <category>
+		<pattern>MI NOMBRE ES *</pattern>
+		<template> 
+		  De acuerdo a partir de ahora te voy a llamar <set name="name"><star /></set>
+                  <set name="topic"></set>
+		</template>
+	</category> 
+        <category>
+		<pattern>GRACIAS</pattern>
+		<template> 
+		  De nada, estoy para servirte <get name="name"/>
+		</template>
+	</category> 
+        </category>
+        <category>
+		<pattern>ADIOS</pattern>
+		<template> 
+		  ¡Hasta la próxima!
+		</template>
+                <think>
+			<set name="topic"></set>
+		</think>
+	</category>
+        <category>
+		<pattern>HOLA</pattern>
+		<template> 
+		  ¡ Bienvenido 
+                  <if name="name" exists="true">
+                      <get name="name" />
+                  </if>   
+                  !
+                  <if name="topic" exists="true">
+                      Estábamos hablando de <get name="topic" />, pero si quieres podemos cambiar de tema.
+                  <else/>
+                      Puedo hablar contigo de concesionarios, contacto o coches.
+                  </if>
+		</template>
+	</category>
+        <category>
+		<pattern>CONTACTO</pattern>
+		<template>
+		Puedes contactar con atención al cliente con el teléfono 902151161 o enviando un mail a atencioncliente@volkswagen.es
+		</template>
+		<think>
+			<set name="it">
+				<set name="topic">CONCESIONARIOS</set>
+			</set>
+		</think>
+	</category>
+        <category>
+		<pattern>CONCESIONARIOS</pattern>
+		<template>
+		Si me mandas tu ubicación puedo indicarte el concesionario más cercano e incluso concertar una cita en él
+		</template>
+		<think>
+			<set name="it">
+				<set name="topic">CONCESIONARIOS</set>
+			</set>
+		</think>
+	</category>
+	<category>
+		<pattern>COCHES</pattern>
+		<template>
+		Te puedo dar información, catálogo, multimedia y wallpapers de los siguientes coches: Golf, Polo y Passat
+		</template>
+		<think>
+			<set name="it">
+				<set name="topic">COCHES</set>
+			</set>
+		</think>
+	</category>
+	<category>
+		<pattern>GOLF</pattern>
+		<template>
+		¿Qué quieres del Golf? ¿Catálogo, multimedia o wallpaper?
+		</template>
+		<think>
+			<set name="it">
+				<set name="topic">GOLF</set>
+			</set>
+		</think>
+	</category>
+	<category>
+		<pattern>POLO</pattern>
+		<template>
+		¿Qué quieres del Polo? ¿Catálogo, multimedia o wallpaper?
+		</template>
+		<think>
+			<set name="it">
+				<set name="topic">POLO</set>
+			</set>
+		</think>
+	</category>
+	<topic name="GOLF">
+		<category>
+			<pattern>CATALOGO</pattern>
+			<template>
+			Catálogo en PDF del Golf
+			</template>
+		</category>
+		<category>
+			<pattern>MULTIMEDIA</pattern>
+			<template>
+			Tengo disponible el video del Spot del nuevo Golf, te interesa?
+			</template>
+		</category>
+                <category>
+			<pattern>SI</pattern>
+			<that>TENGO DISPONIBLE EL VIDEO DEL SPOT DEL NUEVO GOLF TE INTERESA</that>
+			<template>
+			El nuevo Spot del Golf
+			</template>
+		</category>
+		<category>
+			<pattern>NO</pattern>
+			<that>TENGO DISPONIBLE EL VIDEO DEL SPOT DEL NUEVO GOLF TE INTERESA</that>
+			<template>
+				<srai>GOLF</srai>
+			</template>
+		</category>
+		<category>
+			<pattern>WALLPAPER</pattern>
+			<template>
+			Wallpaper del Golf
+			</template>
+		</category>
+                <category>
+			<pattern>*</pattern>
+			<template>
+			Estamos hablando del Golf, te puedo ofrecer Catálogo, Multimedia o Wallpaper.
+			</template>
+		</category>
+	</topic>
+	<topic name="POLO">
+		<category>
+			<pattern>CATALOGO</pattern>
+			<template>
+			Catálogo en PDF del Polo
+			</template>
+		</category>
+		<category>
+			<pattern>MULTIMEDIA</pattern>
+			<template>
+			Tengo disponible el video del Spot del nuevo Polo, te interesa?
+			</template>
+		</category>
+		<category>
+			<pattern>SI</pattern>
+			<that>TENGO DISPONIBLE EL VIDEO DEL SPOT DEL NUEVO POLO TE INTERESA</that>
+			<template>
+			El nuevo Spot de Polo
+			</template>
+		</category>
+		<category>
+			<pattern>NO</pattern>
+			<that>TENGO DISPONIBLE EL VIDEO DEL SPOT DEL NUEVO POLO TE INTERESA</that>
+			<template>
+				<srai>POLO</srai>
+			</template>
+		</category>
+		<category>
+			<pattern>WALLPAPER</pattern>
+			<template>
+			Wallpaper del Polo
+			</template>
+		</category>
+		<category>
+			<pattern>*</pattern>
+			<template>
+			Estamos hablando del Polo, te puedo ofrecer Catálogo, Multimedia o Wallpaper.
+			</template>
+		</category>
+	</topic>
+</aiml>

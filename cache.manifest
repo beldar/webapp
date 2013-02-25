@@ -1,0 +1,62 @@
+CACHE MANIFEST
+# 2013-02-25:v2.12345
+
+#Es cacheja
+CACHE:
+index.php
+favicon.ico
+#IMG
+img/pattern.jpg
+img/landing.png
+img/wapolo.png
+img/wapolo@2x.png
+img/poloavatar.png
+img/poloavatar@2x.png
+img/files/100kmh_whatsapp.jpg
+img/files/gato_orig_whatsapp.jpg
+img/files/polo_whatsapp.jpg
+img/files/monologo1.jpg
+img/files/monologo2.jpg
+css/error.gif
+css/icons.png
+css/icons@2x.png
+css/loader.gif
+#Video
+
+#JS
+js/vendor/add2home.js
+js/vendor/modernizr-2.6.2.min.js
+js/vendor/json2.js
+js/vendor/jquery-1.9.1.min.js
+js/vendor/underscore-min.js
+js/vendor/backbone-min.js
+js/vendor/backbone.localStorage.js
+js/vendor/klass.min.js
+js/vendor/code.photoswipe-3.0.5.min.js
+js/vendor/bootstrap.min.js
+js/vendor/iscroll.js
+js/helper.js
+js/main.js
+#CSS
+css/add2home.css
+css/normalize.css
+css/photoswipe.css
+css/font-awesome.min.css
+css/bootstrap.min.css
+css/bootstrap-responsive.min.css
+css/main.css
+#FONT
+font/fontawesome-webfont.ttf?v=3.0.1
+font/fontawesome-webfont.woff?v=3.0.1
+font/SourceSansPro-Regular-webfont.ttf
+font/SourceSansPro-Regular-webfont.woff
+font/SourceSansPro-Bold-webfont.ttf
+font/SourceSansPro-Bold-webfont.woff
+
+#NO es cacheja
+NETWORK:
+newuser.php
+talk.php
+js/online.js
+http://connect.facebook.net/es_ES/all.js
+#(la resta)

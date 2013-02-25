@@ -1,0 +1,287 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@font-face {
+    font-family: 'SourceSansProRegular';
+    src: url('../font/SourceSansPro-Regular-webfont.eot');
+    src: url('../font/SourceSansPro-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/SourceSansPro-Regular-webfont.woff') format('woff'),
+         url('../font/SourceSansPro-Regular-webfont.ttf') format('truetype'),
+         url('../font/SourceSansPro-Regular-webfont.svg#../font/SourceSansProRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'SourceSansProBold';
+    src: url('../font/SourceSansPro-Bold-webfont.eot');
+    src: url('../font/SourceSansPro-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/SourceSansPro-Bold-webfont.woff') format('woff'),
+         url('../font/SourceSansPro-Bold-webfont.ttf') format('truetype'),
+         url('../font/SourceSansPro-Bold-webfont.svg#../font/SourceSansProBold') format('svg');
+    font-weight: bold;
+    font-style: bold;
+
+}
+html,body{
+  font-family:'SourceSansProRegular', sans-serif;font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;background: url('../img/pattern.jpg');
+}
+video{-webkit-transform-style: preserve-3d}
+#loading{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;padding-top:40%;z-index:9999;background: url('../img/pattern.jpg');}
+#loading .inner{color:white;width:90%;margin:0 auto;}
+#head{
+    position:absolute;top:0;left:0;width:100%;height:50px;
+    background-image: linear-gradient(bottom, rgb(58,58,58) 0%, rgb(83,83,83) 98%, rgb(99,99,99) 99%);
+    background-image: -o-linear-gradient(bottom, rgb(58,58,58) 0%, rgb(83,83,83) 98%, rgb(99,99,99) 99%);
+    background-image: -moz-linear-gradient(bottom, rgb(58,58,58) 0%, rgb(83,83,83) 98%, rgb(99,99,99) 99%);
+    background-image: -webkit-linear-gradient(bottom, rgb(58,58,58) 0%, rgb(83,83,83) 98%, rgb(99,99,99) 99%);
+    background-image: -ms-linear-gradient(bottom, rgb(58,58,58) 0%, rgb(83,83,83) 98%, rgb(99,99,99) 99%);
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0, rgb(58,58,58)),
+            color-stop(0.98, rgb(83,83,83)),
+            color-stop(0.99, rgb(99,99,99))
+    );
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #141414;
+    -webkit-box-shadow: 0px 15px 16px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:  0px 15px 16px rgba(50, 50, 50, 0.5);
+    box-shadow:      0px 15px 16px rgba(50, 50, 50, 0.5);
+    z-index:100;
+    color:white;
+    font-weight: bold;
+    text-shadow: 1px 0px 3px rgba(150, 150, 150, 0.5);
+    text-align:center;
+    display:table;
+    z-index:1000;
+}
+#head #title{display:table-cell;vertical-align: middle;font-size:1.6em;line-height:2em;font-family:'SourceSansProBold'}
+#head #title .btn-group{font-family:arial, sans-serif;font-weight: normal;}
+#conversation{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 100;
+    background: url('../img/pattern.jpg');
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+}
+#registre{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    z-index:2000;
+    background: url('../img/pattern.jpg');
+}
+.up{z-index:9999;}
+#registre #landing{position:relative;margin:20px auto;width:100%;height:auto;}
+#registre #buttons{position:relative;margin-left:10%;margin-right:10%;}
+#registre #buttons a{width:100%;margin-bottom: 10px;padding-left:0; padding-right:0;}
+#registre input{padding:11px 19px;min-height: 44px;}
+#registre fieldset{border-top:1px solid white !important;width:100%;}
+#registre fieldset legend{padding:0 10px;margin:0;border:0;margin:0 auto;width:auto !important;color:white}
+#container.flip #conversation{-webkit-transform: rotateY(180deg);z-index:1;}
+#container.flip #text{-webkit-transform: rotateY(180deg);z-index:1;}
+#container.flip #mediadiv{-webkit-transform: rotateX(0deg) rotateY(0deg);}
+#container #mediadiv video{visibility:hidden}
+#container.flip #mediadiv video{visibility:visible;}
+#mediadiv{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
+    background: url('../img/pattern.jpg');
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY(-180deg);
+}
+#mediadiv.ready{z-index:200;}
+#mediadiv .media{width:90%;margin:10px auto;text-indent: -999px;min-height: 100px;}
+#text{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:10%;
+    background: transparent;
+    z-index:20;
+    background: url('../img/pattern.jpg');
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+}
+.fbbtn{
+    background-color: #4a6ca4;
+    background-image: linear-gradient(bottom, rgb(74,108,164) 29%, rgb(115,139,185) 80%);
+    background-image: -o-linear-gradient(bottom, rgb(74,108,164) 29%, rgb(115,139,185) 80%);
+    background-image: -moz-linear-gradient(bottom, rgb(74,108,164) 29%, rgb(115,139,185) 80%);
+    background-image: -webkit-linear-gradient(bottom, rgb(74,108,164) 29%, rgb(115,139,185) 80%);
+    background-image: -ms-linear-gradient(bottom, rgb(74,108,164) 29%, rgb(115,139,185) 80%);
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0.29, rgb(74,108,164)),
+            color-stop(0.8, rgb(115,139,185))
+    );
+}
+.fbbtn:hover{background-color: #4a6ca4;}
+.twbtn{
+    background-image: linear-gradient(bottom, rgb(0,142,185) 29%, rgb(0,160,209) 80%);
+    background-image: -o-linear-gradient(bottom, rgb(0,142,185) 29%, rgb(0,160,209) 80%);
+    background-image: -moz-linear-gradient(bottom, rgb(0,142,185) 29%, rgb(0,160,209) 80%);
+    background-image: -webkit-linear-gradient(bottom, rgb(0,142,185) 29%, rgb(0,160,209) 80%);
+    background-image: -ms-linear-gradient(bottom, rgb(0,142,185) 29%, rgb(0,160,209) 80%);
+
+    background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0.29, rgb(0,142,185)),
+            color-stop(0.8, rgb(0,160,209))
+    );
+}
+.twbtn:hover{background-color:#008eb9;}
+i.wapolo{width:55px;height:46px;background:url('../img/wapolo.png');display:inline-block;vertical-align: bottom;margin-right:10px;}
+#text #input{position:relative;float:left;width:75%;margin-left:1%;margin-top:2%;}
+#text #send{position:relative;float:left;width:15%;margin-left:3%;margin-top:2%;padding-left:2px;padding-right:2px;}
+#container{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;-webkit-perspective: 1000;}
+#bubbles{width:92%;margin:0 auto;padding-top:70px}
+.me strong {color: rgb(78,145,3);}
+#bubbles p {clear: both;}
+#bubbles p.date {
+    color: #777;
+    font: bold 14px/1.4 helvetica, arial, verdana, sans-serif;
+    text-align: center;
+    background: rgba(0,0,0,0.1);
+    padding:25px 0;
+}
+/* set up the speech bubbles */
+#bubbles p.message {
+    position:relative;
+    padding:5px 10px;
+    border:2px solid rgb(74,77,82);
+    border:2px solid rgba(74,77,82,.5);
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    max-width: 65%;
+    -webkit-box-shadow: 3px 3px 12px rgba(50, 50, 50, 0.2);
+    -moz-box-shadow:    3px 3px 12px rgba(50, 50, 50, 0.2);
+    box-shadow:         3px 3px 12px rgba(50, 50, 50, 0.2);
+    text-overflow: ellipsis;
+}
+
+/* Gradients and styles for each bubble */
+#bubbles p.you {
+    background: #EBEBEB; /* old browsers */
+    background: -moz-linear-gradient(top, #EBEBEB 5%, #D6D6D6 15%, #D2D2D2 71%, #E7E7E7 99%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#EBEBEB), color-stop(15%,#D6D6D6), color-stop(71%,#D2D2D2), color-stop(99%,#E7E7E7)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBEBEB', endColorstr='#E7E7E7',GradientType=0 ); /* ie */
+    margin-left:65px;
+}
+#bubbles p.you .pavatar{
+    position:absolute;
+    left:-80px;
+    bottom: -5px;
+    width:65px;
+    height: 40px;
+    background: url('../img/poloavatar.png') no-repeat center center;
+}
+#bubbles p.me {
+    background: #D0ECCC; /* old browsers */
+    background: -moz-linear-gradient(top, #D0ECCC 5%, #87CD65 15%, #92D664 70%, #ADE763 99%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#D0ECCC), color-stop(15%,#87CD65), color-stop(70%,#92D664), color-stop(99%,#ADE763)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D0ECCC', endColorstr='#ADE763',GradientType=0 ); /* ie */
+    float: right;
+}
+
+/* The basic speech triangle */
+#bubbles p.message:before {
+    content:"";
+    display:block; /* reduce the damage in FF3.0 */
+    position:absolute;
+    border-style:solid;
+    border-color:transparent rgb(74,77,82);
+    border-color:transparent rgba(74,77,82,.5);
+}
+#bubbles p.message:after {/* creates the smaller  triangle */
+    content:"";
+    display:block; /* reduce the damage in FF3.0 */
+    position:absolute;
+    border-style:solid;
+}
+/* Me points to the right */
+#bubbles p.message.me:before {
+    right:-16px;
+    bottom:7px;
+    border-width:8px 0 8px 14px;
+}
+#bubbles p.message.me:after {/* creates the smaller  triangle */
+    right:-13px;
+    bottom:8px;
+    border-width:7px 0 7px 14px;
+    border-color:transparent #94d749; /* green */
+}
+/* Other person points to the left */
+#bubbles p.message.you:before {	/* creates the larger triangle */
+    left:-18px;
+    bottom:7px;
+    border-width:8px 16px 8px 0;
+}
+#bubbles p.message.you:after {	/* creates the smaller  triangle */
+    left:-13px;
+    bottom:8px;
+    border-width:7px 14px 7px 0;
+    border-color:transparent #d3d3d3; /* grey */
+}
+#bubbles p.message.you .time{
+    font-family: arial,sans-serif;line-height:1.1em;
+    display:block;position:absolute;bottom:-2px;right:-25px;font-size:0.8em;background:white;-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;padding:2px;border:1px solid grey;}
+#bubbles p.message.me .time{
+    font-family: arial,sans-serif;line-height:1.1em;display:block;position:absolute;bottom:-2px;left:-25px;font-size:0.8em;background:white;-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;padding:2px;border:1px solid grey;
+}
+/** Retina hacks **/
+@media(-webkit-min-device-pixel-ratio: 2) {
+    i.wapolo{background-image: url('../img/wapolo@2x.png');background-size:55px 46px; }
+    #bubbles p.you .pavatar{background-image: url('../img/poloavatar@2x.png');background-size: 65px 40px;}
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 800px) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for viewports that meet the condition */
+}

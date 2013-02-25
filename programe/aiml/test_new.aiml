@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml version="1.0">
+
+<!-- Free software (c) 2001 ALICE AI Foundation -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License -->
+<!-- as published by the Free Software Foundation. -->
+
+	<meta name="author" content="Marti Planellas"/>
+	<meta name="language" content="es"/>
+
+	<category>
+		<pattern>*</pattern>
+		<template>
+                     Esta claro que será mejor que hablemos de otro tema. ¿Cuántos años tienes?
+		</template>
+	</category>
+	<category>
+		<pattern>TOPIC</pattern>
+		<template> 
+		  Topic actual es <get name="topic" />.
+		</template>
+	</category>
+        <category>
+        <category>
+		<pattern>NOMBRE *</pattern>
+		<template>  
+                    <think>
+                        <set name="name"><star /></set>
+                        <set name="topic"></set>
+                    </think>
+                    <srai>HOLA</srai>
+		</template>
+	</category> 
+        <category>
+		<pattern>MI NOMBRE ES *</pattern>
+		<template> 
+		  <srai>HOLA</srai>
+                  <think>
+                        <set name="name"><star /></set>
+                        <set name="topic"></set>
+                  </think>
+		</template>
+	</category> 
+        <category>
+		<pattern>GRACIAS</pattern>
+		<template> 
+		  De nada, estoy para servirte <if name="name" exists="true"><get name="name" /></if>
+		</template>
+	</category> 
+        </category>
+        <category>
+		<pattern>ADIOS</pattern>
+		<template> 
+		  ¡Hasta la próxima!
+		</template>
+                <think>
+			<set name="topic"></set>
+		</think>
+	</category>
+        <category>
+		<pattern>ESTUDIAS</pattern>
+		<template>
+                ¿Estudias o trabajas?
+		</template>
+	</category>
+        <category>
+		<pattern>*</pattern>
+                <that>ESTUDIAS O TRABAJAS</that>
+		<template>
+                    Ya sé lo que estás pensando, pero no te lo pregunto para ligar es solo para conocernos mejor, de todas formas yo te gusto ¿no?
+		</template>
+	</category>
+        <category>
+		<pattern>*</pattern>
+                <that>YA SE LO QUE ESTAS PENSANDO PERO NO TE LO PREGUNTO PARA LIGAR ES SOLO PARA CONOCERNOS MEJOR DE TODAS FORMAS YO TE GUSTO NO</that>
+		<template>
+                    Uff!!! Haces que me ponga colorado {image:polo_whatsapp.jpg} ¿Y a ti? ¿Te suben fácilmente los colores?
+		</template>
+	</category>
+        <category>
+		<pattern>*</pattern>
+                <that> JPG Y A TI TE SUBEN FACILMENTE LOS COLORES</that>
+		<template>
+                    Pues a ver si yo lo consigo. ¡Mírate esto! {video:monologo1.m4v} ¿A que te ha molado?
+		</template>
+	</category>
+        <category>
+        	<pattern>*</pattern>
+                <that> M4V A QUE TE HA MOLADO</that>
+		<template>
+                    Yo creo que podemos llegar a ser buenos amigos.¿cuánto tiempo necesitas para ser amigo de alguien?
+		</template>
+	</category>
+        <category>
+        	<pattern>*</pattern>
+                <that> CUANTO TIEMPO NECESITAS PARA SER AMIGO DE ALGUIEN</that>
+		<template>
+                    Espero que lo nuestro sea más rápido. Porque para que nazca una gran amistad no hace falta que los dos sean seres humanos.¿Tú tienes mascota?
+		</template>
+	</category>
+        <category>
+        	<pattern>*</pattern>
+                <that>TU TIENES MASCOTA</that>
+		<template>
+                    Yo tengo un gato {image:gato_orig_whatsapp.jpg} Es muy mono
+		</template>
+	</category>
+        <category>
+        	<pattern>*</pattern>
+                <that> JPG ES MUY MONO</that>
+		<template>
+                    No te rías, si quieres reírte mira esto {video:monologo2.mp4} ¿Como te has quedado?
+		</template>
+	</category>
+        <category>
+        	<pattern>*</pattern>
+                <that> MP4 COMO TE HAS QUEDADO</that>
+		<template>
+                    Yo aquí, estoy calendando motores. El otro día vi a una Cady y mira cómo me puso {image:100kmh_whatsapp.jpg} Y hoy he quedado con ella. Y tú ¿Tienes pareja?
+		</template>
+	</category>
+        <category>
+        	<pattern>*</pattern>
+                <that> Y TU TIENES PAREJA</that>
+		<template>
+                    ¿Llevas mucho tiempo con ella?
+		</template>
+	</category>
+        <category>
+        	<pattern>*</pattern>
+                <that>LLEVAS MUCHO TIEMPO CON ELLA</that>
+		<template>
+                    No está mal. Entonces mira esto, seguro que te mola.
+		</template>
+	</category>
+        <category>
+		<pattern>HOLA</pattern>
+		<template> 
+		  Hola <if name="name" exists="true"><get name="name" /></if>,
+                  me mola tu nombre.
+                  <srai>ESTUDIAS</srai>
+		</template>
+	</category>
+        <category>
+		<pattern>CONTACTO</pattern>
+		<template>
+                ¿Quieres contactar con Volkswagen?
+		Puedes llamar al servicio de atención al cliente 902151161 o enviar un mail a atencioncliente@volkswagen.es
+		</template>
+		<think>
+			<set name="topic">CONTACTO</set>
+		</think>
+	</category>
+        
+</aiml>

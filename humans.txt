@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Martí Planellas -- Lead Programmer -- @beldar
+
+# THANKS
+
+    Carrots - carrots.es
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Modernizr, jQuery, BackboneJS, add2home
