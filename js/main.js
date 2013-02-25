@@ -88,7 +88,7 @@ var AppView = Backbone.View.extend({
    showmedia: function(){
         if($("#mediacont .media").length==0) $("#mediacont").append('<h2>No hay contenido multimedia</h2>');
         $("#container").addClass('flip');
-        $('<a href="#" id="back" class="btn btn-inverse pull-left" style="margin-left:20px"><i class="icon-circle-arrow-left"></i> atrás</a>').appendTo('#title');
+        $('<a href="#" id="back" class="btn btn-inverse pull-left" style="margin-left:5px;margin-top:5px;"><i class="icon-circle-arrow-left"></i></a>').appendTo('#title');
         $("#back").click(function(){
             $("#container").removeClass('flip');
             $(this).remove();

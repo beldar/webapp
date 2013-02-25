@@ -65,21 +65,25 @@ if(strlen($error)>0) error_log($error);
         <meta charset="utf-8">
         <title>WhatsApPolo</title>
         <!--AppCache management, if there's new manifest show a loading bar, else checknetworkstatus -->
+        
         <script type="text/javascript">
             window.applicationCache.addEventListener('progress', function(e){
                 var progress = document.getElementById('progress');
                 var perc = Math.round((e.loaded/e.total)*100);
                 progress.style.width = perc+'%';
-                if(e.loaded==e.total) document.getElementById('loading').style.display = 'none';
+                if(e.loaded==e.total){
+                    document.getElementById('loading').style.display = 'none';
+                    checkNetworkStatus();
+                }
             }, false);
             window.applicationCache.addEventListener('noupdate', function(){document.getElementById('loading').style.display='none';checkNetworkStatus()}, false);
-            window.applicationCache.addEventListener('updateready', function(){document.getElementById('loading').style.display='none';checkNetworkStatus()}, false);
+            //window.applicationCache.addEventListener('updateready', function(){document.getElementById('loading').style.display='none';checkNetworkStatus()}, false);
             window.applicationCache.addEventListener('error', function(){document.getElementById('loading').style.display='none';checkNetworkStatus()}, false);
         </script>
         
         <meta name="description" content="">
         <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="548">
+        <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0">
         <!-- for iPhone 5 -->
         <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" />
@@ -105,7 +109,7 @@ if(strlen($error)>0) error_log($error);
 
         <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
         <!---->
-        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName)&&d.className!='image')d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName)||d.className=='image'||d.id=='anonim')d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
         
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
@@ -188,6 +192,7 @@ if(strlen($error)>0) error_log($error);
             var user = <?=json_encode($user_data);?>;
             var provider = '<?=$provider?>';
             function checkNetworkStatus() {
+                console.log('Checking network status');
                 if (navigator.onLine) {
                     // Just because the browser says we're online doesn't mean we're online. The browser lies.
                     // Check to see if we are really online by making a call for a static JSON resource on
