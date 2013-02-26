@@ -38,7 +38,7 @@ var MessageView = Backbone.View.extend({
     },
     rendermedia: function(){
         console.log('Rendering media');
-        var id = this.model.get('body').match(/<[^>]*src=["|\']([^"|\']+)/i)[1].replace(/\"/g,'').split('/').pop();
+        var id = this.model.get('body').match(/<[^>]*src=["|\']([^"|\']+)/i)[1].replace(/\"/g,'').split('/').pop().split('.')[0];
         if($("#"+id).length==0)
             $('<div id="'+id+'" class="media">'+this.model.get('body')+'</div>').appendTo('#mediacont');
         $(window).trigger('newmedia');
