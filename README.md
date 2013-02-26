@@ -8,7 +8,9 @@ Quick Start
 -----------
 
 So you want to test this? You will need a database then, for the Chatterbot AIML part use the file on programe/admin/db.sql to create
-the database and edit the programe/admin/dbprefs.php 
+the database and edit the programe/admin/dbprefs.php, once you created the structure, you can edit the programe/aiml/startup.xml if you want and then  you must go to /programe/admin/botloader.php to populate the database,
+you can edit or change the aiml files on programe/aiml folder.
+
 You would also need a table for the user data you can create it like this:
 
     CREATE TABLE `users` (
