@@ -4,6 +4,8 @@ Mobile Web App
 Just a test I did for a Whatsapp-like chatterbot mobile web app, thought for a Volkswagen Polo campaign.
 For educational purposes only.
 
+You can check out some screenshots [HERE](https://www.dropbox.com/sh/7y8i20hpql8uxbx/tCgd7VFy81)
+
 Quick Start
 -----------
 
