@@ -28,7 +28,7 @@ You would also need a table for the user data you can create it like this:
         `provider` varchar(255) DEFAULT 'none',
         `created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (`idusers`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+    ) ENGINE=InnoDB;
 
 If you want to test the Log In with Facebook and/or Twitter you will need a Facebook and a Twitter App, and configure the App ID, Secret, ... on the file hybridauth/config.php
 
