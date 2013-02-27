@@ -198,6 +198,7 @@ var AppView = Backbone.View.extend({
             val = val.replace(/(<([^>]+)>)/ig,"");
             var msg = new Message({from:'me',body:val, time:new Date(), id:new Date().getTime()})
             this.Conversa.add(msg);
+            val = val.replace(/\./ig,"");
             $.post('talk.php',{input:val,user:this.id}, function(r){
                     var msg = new Message({from:'you',body:r, time:new Date(), id:new Date().getTime()})
                     view.Conversa.add(msg);
