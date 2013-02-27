@@ -193,8 +193,9 @@ var AppView = Backbone.View.extend({
    say: function(){
        var val = this.input.val();
        var view = this;
-       if(val!=''){
+       if(val!='' && !this.send.hasClass('disabled')){
             // Strip tags
+            this.send.addClass('disabled');
             val = val.replace(/(<([^>]+)>)/ig,"");
             var msg = new Message({from:'me',body:val, time:new Date(), id:new Date().getTime()})
             this.Conversa.add(msg);
@@ -204,11 +205,13 @@ var AppView = Backbone.View.extend({
                     view.Conversa.add(msg);
                     view.input.val('');
                     _.defer(view.scrollDown);
+                    view.send.removeClass('disabled');
             }).error(function(){
                     var msg = new Message({from:'you',body:'Lo siento, pero parece que no hay conexión, así que tendremos que dejar la charla para más tarde :(', time:new Date(), id:new Date().getTime()})
                     view.Conversa.add(msg);
                     view.input.val('');
                     _.defer(view.scrollDown);
+                    view.send.removeClass('disabled');
             });
        }
    },
