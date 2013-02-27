@@ -1010,7 +1010,7 @@ function parseout($input)
     $input = preg_replace("#(^|[\n ])(([\w]+?://[\w\#$%&~.\-;:=,?@\[\]+]*)(/[\w\#$%&~/.\-;:=,?@\[\]+]*)?)#is", "\\1<a href=\"\\2\" title=\"\\2\" rel=\"nofollow\">\\2</a>", $input);
     //Tokens
     $tokens = preg_split('/(\{[^\}]+\})/', $input, -1, PREG_SPLIT_DELIM_CAPTURE);
-    $ourl = '/polo/img/files/';
+    $ourl = 'img/files/';
     if(count($tokens)>1){
         $input = "";
         foreach($tokens as $token){
