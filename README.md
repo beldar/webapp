@@ -34,6 +34,16 @@ If you want to test the Log In with Facebook and/or Twitter you will need a Face
 
 And you're ready to go!
 
+Templating
+----------
+I'm using a custom-made simple templating to insert images and video on the chat, you can check the programe/aiml/test_new.aiml to see how to use it,
+but in a nutshell if you want to include and image you do it like this:
+    {image:image.jpg}
+And for a video:
+    {video:video.mp4}
+The poster image for the video is the same name with .jpg extension (in this example video.jpg)
+All the files must be on the img/files folder. But you can change this route on the programe/util.php file (line 1013).
+
 Featuring
 ---------
 * App Cache management
@@ -49,5 +59,6 @@ Featuring
 * Font Awesome icons
 * iPhone5 optimized
 * Photoswipe images.
+* Image and video template.
 
 All the images used here are Copyright of Carrots.
